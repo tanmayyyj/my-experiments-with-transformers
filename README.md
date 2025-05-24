@@ -1,2 +1,3 @@
 # my-experiments-with-transformers
-Playing around with transformers and training techniques
+Training a 70M parameter causal transformer from scratch on TinyStories. 
+
