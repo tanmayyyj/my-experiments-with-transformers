@@ -1,0 +1,39 @@
+# Python cache files
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Model files (usually too large for git)
+*.pth
+*.pt
+*.bin
+*.safetensors
+
+# Dataset files
+*.txt
+TinyStories/
+
+# Generated output files
+generated_story.txt
+
+# Virtual environment
+venv/
+env/
+.venv/
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# PyTorch profiler output
+profiler_logs/
