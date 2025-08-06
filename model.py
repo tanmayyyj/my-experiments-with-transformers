@@ -160,10 +160,15 @@ class GPTLanguageModel(nn.Module):
                 logits = logits[:, -1, :]  # last token logits
                 probs = torch.softmax(logits, dim=-1)
                 next_token = torch.multinomial(probs, num_samples=1)
+                
+                # Check if the generated token is end-of-text token
+                token_id = next_token.item()
+                if token_id == encoding.eot_token:  # 50256 is the end-of-text token
+                    break
+                
                 idx = torch.cat((idx, next_token), dim=1)
 
                 # Decode the last token only
-                token_id = next_token.item()
                 token_str = encoding.decode([token_id])
 
                 # Print token without newline, flush buffer for live effect
